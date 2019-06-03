@@ -11,7 +11,8 @@ void logAndAdd(T &&str)
 {
 	logNow("logAndAdd");
 	std::cout << typeid(str).name() << std::endl;
-	names.emplace(str);
+	std::cout << typeid(std::forward<T>(str)).name() << std::endl;
+	names.emplace(std::forward<T>(str));
 }
 
 int main()

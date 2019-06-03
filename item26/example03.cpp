@@ -1,4 +1,3 @@
-#include <iostream>
 #include <set>
 #include <string>
 #include "log.h"
@@ -13,7 +12,7 @@ template <typename T>
 void logAndAdd(T &&str)
 {
 	logNow("logAndAdd");
-	names.emplace(str);
+	names.emplace(std::forward<T>(str));
 }
 
 void logAndAdd(int idx)

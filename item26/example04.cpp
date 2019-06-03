@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 
 std::string nameFromIdx(int idx) {
