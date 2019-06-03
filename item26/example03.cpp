@@ -5,10 +5,21 @@
 
 std::multiset<std::string> names;
 
-void logAndAdd(const std::string &str)
+std::string nameFromIdx(int idx) {
+	return "Dragula";
+}
+
+template <typename T>
+void logAndAdd(T &&str)
 {
 	logNow("logAndAdd");
 	names.emplace(str);
+}
+
+void logAndAdd(int idx)
+{
+	logNow("logAndAdd");
+	names.emplace(nameFromIdx(idx));
 }
 
 int main()
@@ -17,6 +28,10 @@ int main()
 
 	logAndAdd(petName); // lvalue string, involve copying
 	logAndAdd(std::string("Nala")); // rvalue string, involve copying
-	logAndAdd("Simba"); // string literal, involve copying
+	logAndAdd("Simba"); // string literal
+	logAndAdd(22);
+
+	short nameIdx; // same as size_t, short, long
+	//logAndAdd(nameIdx); // ERROR
 	return 0;
 }

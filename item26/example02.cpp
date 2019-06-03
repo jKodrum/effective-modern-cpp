@@ -1,13 +1,16 @@
 #include <iostream>
 #include <set>
 #include <string>
+#include <typeinfo>
 #include "log.h"
 
 std::multiset<std::string> names;
 
-void logAndAdd(const std::string &str)
+template <typename T>
+void logAndAdd(T &&str)
 {
 	logNow("logAndAdd");
+	std::cout << typeid(str).name() << std::endl;
 	names.emplace(str);
 }
 
@@ -17,6 +20,6 @@ int main()
 
 	logAndAdd(petName); // lvalue string, involve copying
 	logAndAdd(std::string("Nala")); // rvalue string, involve copying
-	logAndAdd("Simba"); // string literal, involve copying
+	logAndAdd("Simba"); // string literal
 	return 0;
 }
