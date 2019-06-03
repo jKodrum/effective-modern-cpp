@@ -8,7 +8,7 @@ all: $(BIN)
 %.o: %.cpp
 	$(CXX) -o $@ $(CFLAGS) -c $<
 
-$(BIN): $(CPP:.cpp=.o)
+example%: example%.o
 	$(CXX) -o $(<:.o=) $(CFLAGS) $<
 
 clean:
