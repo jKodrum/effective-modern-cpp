@@ -23,7 +23,7 @@ int main()
 	std::string petName("Dragula");
 
 	logAndAdd(petName); // lvalue string, involve copying
-	logAndAdd(std::string("Nala")); // rvalue string, involve copying
+	logAndAdd(std::string("Nala")); // rvalue string, exec ctor and dtor
 	logAndAdd("Simba"); // string literal
 	return 0;
 }

@@ -22,9 +22,9 @@ private:
 int main()
 {
 	Person p("Alphonse");
-	const Person cp("Alphonse");
+	//auto cloneOfP(p); // ERROR (non-const var taken by template ctor)
 
-	//auto cloneOfP(p); // ERROR
+	const Person cp("Alphonse");
 	auto cloneOfCp(cp);
 
 	int i = 1;

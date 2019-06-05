@@ -21,7 +21,9 @@ template <typename T>
 void logAndAdd(T &&str)
 {
 	logAndAddImpl(std::forward<T>(str),
-			std::is_integral<typename std::remove_reference<T>::type>());
+			std::is_integral<
+				typename std::remove_reference<T>::type
+			>());
 }
 
 template <typename T>

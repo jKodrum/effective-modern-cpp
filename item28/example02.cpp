@@ -4,10 +4,7 @@ class Widget {
 };
 
 template <typename T>
-T &&myForward(typename std::remove_reference<T>::type& param)
-{
-	return static_cast<T&&>(param);
-}
+T &&myForward(typename std::remove_reference<T>::type&);
 
 template <typename T>
 void func(T &&param)
@@ -23,6 +20,12 @@ void someFunc(const Widget &w)
 void someFunc(Widget &&w)
 {
 	std::cout << "rvalue" << std::endl;
+}
+
+template <typename T>
+T &&myForward(typename std::remove_reference<T>::type& param)
+{
+	return static_cast<T&&>(param);
 }
 
 int main()
