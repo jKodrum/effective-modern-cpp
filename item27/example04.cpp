@@ -29,5 +29,19 @@ int main()
 
 	auto cloneOfP(p);
 	auto cloneOfCp(cp);
+
+	int i = 1;
+	Person p1(i);
+
+	/* // ERRROR
+	short s = 2;
+	Person p2(s);
+
+	size_t u = 3;
+	Person p3(u);
+
+	long l = l;
+	Person p4(l);
+	*/
 	return 0;
 }
