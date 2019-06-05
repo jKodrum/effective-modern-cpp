@@ -9,9 +9,12 @@ std::string nameFromIdx(int idx) {
 	return "Dragula";
 }
 
+// Defined in header <type_traits>
+// std::integral_constant<bool, false>
 template <typename T>
 void logAndAddImpl(T&&, std::false_type);
 
+// std::integral_constant<bool, true>
 void logAndAddImpl(int, std::true_type);
 
 template <typename T>

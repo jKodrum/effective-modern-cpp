@@ -23,7 +23,9 @@ private:
 int main()
 {
 	// Person p("Alphonse"); // ERROR (non-const var taken by template ctor)
-	const Person p("Alphonse");
-	auto cloneOfP(p);
+	const Person cp("Alphonse");
+
+	//auto cloneOfP(p);
+	auto cloneOfCp(cp);
 	return 0;
 }
